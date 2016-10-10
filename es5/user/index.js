@@ -4,13 +4,18 @@ var express = require('express');
 
 var port = process.env.PORT||3000;
 var path = '/api/graphql';
-var data = require('./data.json');
+var data = require('./../../data.json');
+var GraphQLString = graphql.GraphQLString;
+var GraphQLList = graphql.GraphQLList;
 
 var userType = new graphql.GraphQLObjectType({
   name: 'User',
   fields: {
-    id: { type: graphql.GraphQLString},
-    name: { type: graphql.GraphQLString},
+    Name: { type: GraphQLString},
+    ldap: { type: GraphQLString },
+    Email: { type: GraphQLString },
+    Slack: { type: GraphQLString },
+    Github: { type: GraphQLString }
   }
 });
 
@@ -21,10 +26,18 @@ var schema = new graphql.GraphQLSchema({
       user: {
         type: userType,
         args: {
-          id: { type: graphql.GraphQLString }
+          Name: { type: GraphQLString }
         },
         resolve: function(_, args){
-          return data[args.id];
+          console.log(JSON.stringify(data));
+          console.log(args);
+          return data[args.Name];
+        }
+      },
+      users: {
+        type: new GraphQLList(userType),
+        resolve: function(){
+          return data;
         }
       }
     }
