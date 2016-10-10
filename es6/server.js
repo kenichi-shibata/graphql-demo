@@ -4,7 +4,7 @@ import graphqlHTTP from 'express-graphql';
 // import bodyParser from 'body-parser';
 import schema from './user/schema';
 
-const path = '/graphql';
+const path = '/';
 const app = express();
 const PORT = process.env.PORT || 8481;
 
