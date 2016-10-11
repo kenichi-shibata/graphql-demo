@@ -1,7 +1,8 @@
 # graphql-demo
 DEMO the awesome power of graphql!
 
-Tutorial coming soon!
+# demo site
+http://graphql.kenichishibata.net/
 
 # Why should i even bother?
 1. Formalize server-client contract (you get only what you need)
@@ -9,6 +10,8 @@ Tutorial coming soon!
 3. Load multiple data in a single request (previously not possible with RestFul Architectures)
 4. Portability (bring your own ORM, your own data, even your own RestFul API)
 5. FutureProof (XML-RPC is the past, JSON-RestFul is the present, GQL-Overanything is the future)
+6. GraphiQL is awesome
+
 
 Still not convinced? [Checkout this video](https://www.youtube.com/watch?v=Oh5oC98ztvI)
 
@@ -56,9 +59,6 @@ And here is the response to that query.
 
 [Source: facebook blog](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html)
 
-
-# demo site
-http://graphql.kenichishibata.net/
 
 ## TODO
 - [x] Data from JSON filie
