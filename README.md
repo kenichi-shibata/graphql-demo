@@ -1,5 +1,7 @@
 # graphql-demo
-showing the awesome power of graphql
+DEMO the awesome power of graphql!
+
+Tutorial coming soon!
 
 # Why should i even bother?
 1. Formalize server-client contract (you get only what you need)
@@ -9,6 +11,7 @@ showing the awesome power of graphql
 5. FutureProof (XML-RPC is the past, JSON-RestFul is the present, GQL-Overanything is the future)
 
 Still not convinced? [Checkout this video](https://www.youtube.com/watch?v=Oh5oC98ztvI)
+
 (-NOTE-) Its not the best practice to use Graphql on top of RestFul APIs for obvious reasons. The best way to leverage the power of graphql is to use it directly on top of a data source. 
 
 
@@ -50,6 +53,7 @@ And here is the response to that query.
 
 
 [Source: Graphql.org](http://graphql.org/)
+
 [Source: facebook blog](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html)
 
 
