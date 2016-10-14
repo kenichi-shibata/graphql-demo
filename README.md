@@ -4,6 +4,52 @@ DEMO the awesome power of graphql!
 # demo site
 http://graphql.kenichishibata.net/playground
 
+## Example 
+Get all members
+```
+{
+  user{
+    members {
+      Name
+      ldap
+      Email
+      Slack
+      Github
+    }
+  }
+}
+```
+Get all members matching the query
+```
+{
+  user{
+    members(ldap:"aalvarez1") {
+      Name
+      ldap
+      Email
+      Slack
+      Github
+    }
+  }
+}
+```
+Get one member matching the query
+```
+{
+  user{
+    member(Name: "Anna Alvarez") {
+      Name
+      ldap
+      Email
+      Slack
+      Github
+    }
+  }
+}
+```
+
+
+
 # Why should i even bother?
 1. Formalize server-client contract (you get only what you need)
 2. Strong querying language with static types (Relational Querying for NoSQL DBs anyone?)
@@ -69,47 +115,3 @@ And here is the response to that query.
 - [x] query 
 - [ ] tutorial blogpost
 - [ ] boilerplate branch
-
-## Example 
-Get all members
-```
-{
-  user{
-    members {
-      Name
-      ldap
-      Email
-      Slack
-      Github
-    }
-  }
-}
-```
-Get all members matching the query
-```
-{
-  user{
-    members(ldap:"aalvarez1") {
-      Name
-      ldap
-      Email
-      Slack
-      Github
-    }
-  }
-}
-```
-Get one member matching the query
-```
-{
-  user{
-    member(Name: "Anna Alvarez") {
-      Name
-      ldap
-      Email
-      Slack
-      Github
-    }
-  }
-}
-```
