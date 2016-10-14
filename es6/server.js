@@ -1,25 +1,33 @@
 import express from 'express';
-// import { graphql } from 'graphql';
+import { GraphQLSchema, GraphQLObjectType } from 'graphql';
 import graphqlHTTP from 'express-graphql';
-// import bodyParser from 'body-parser';
-import schema from './user/schema';
+import count from './count';
+import user from './user';
+import todo from './todo';
 
-const path = '/';
+const path = '/playground';
 const app = express();
 const PORT = process.env.PORT || 8481;
 
-// app.use(bodyParser.text({ type: 'application/graphql' }));
+const schema = new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'RootQuery',
+    fields: {
+      count: count.query,
+      user: user.query,
+      todo: todo.query,
+    },
+  }),
+  mutation: new GraphQLObjectType({
+    name: 'RootMutation',
+    fields: {
+      count: count.mutation,
+      todo: todo.mutation,
+    },
+  }),
+});
+
 app.use(path, graphqlHTTP({ schema, pretty: true, graphiql: true }));
-
-// app.post(path, (req, res) => {
-//   graphql(schema, req.body)
-//     .then((result) => {
-//       res.send(JSON.stringify(result, null, 2));
-//     });
-//
-
-//
-// });
 
 const server = app.listen(PORT, () => {
   const host = server.address().host;

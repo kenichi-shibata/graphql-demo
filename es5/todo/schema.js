@@ -1,4 +1,4 @@
-var graphql = require ('graphql');
+var graphql = require('graphql');
 
 // Here is some dummy data to make this piece of code simpler.
 // It will be changeable after introducing mutation.
@@ -69,6 +69,7 @@ var mutationType = new graphql.GraphQLObjectType({
   name: 'Mutation',
   fields: {
     add: mutationAdd
+  },
 });
 
 module.exports = new graphql.GraphQLSchema({

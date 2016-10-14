@@ -23,7 +23,8 @@ function findByProperty(args, array) {
     }
   }
 // now check if all tempArray values are the same
-  return deepEqual(tempArray);
+  return tempArray[0];  //  return only the first result
+  // return deepEqual(tempArray);
 }
 
 // same as findByProperty but returns array
