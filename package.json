@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean; babel ./es6/*.* -d ./build; babel ./es6/**/* -d ./build; mv build/es6/* build/; rmdir build/es6",
+    "build": "npm run clean; babel ./src/*.* -d ./build; babel ./src/**/* -d ./build; mv build/src/* build/; rmdir build/src",
     "start": "npm run build && node ./build/server.js",
-    "dev": "nodemon ./es6/server.js --exec babel-node --presets es2015 ",
+    "dev": "nodemon ./src/server.js --exec babel-node --presets es2015 ",
     "clean": "rm -rf ./build/",
-    "fix-lint": "eslint --fix es6"
+    "fix-lint": "eslint --fix src"
   },
   "author": "Kenichi Shibata <kenichi.shibata@fastretailing.com> (kenichishibata31.github.io)",
   "license": "ISC",
