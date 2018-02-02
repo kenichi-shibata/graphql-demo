@@ -48,6 +48,33 @@ Get one member matching the query
 }
 ```
 
+Get todo list 
+
+```
+query {
+ todo{ 
+  todos {
+   timestamp
+   title
+   done
+ 		} 
+	}
+}
+```
+
+Mutate todolist
+
+```
+mutation {
+  todo {
+    todos(title: "test", done: true) {
+      title
+      timestamp
+      done
+    }
+  }
+}
+```
 
 
 # Why should i even bother?
