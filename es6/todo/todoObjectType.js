@@ -8,11 +8,12 @@ import todos from './../../mock-todo.json';
 
 const addNewTodo = (root, args) => {
   const timestamp = (new Date()).getTime();
-  const { title } = args;
+	let { title, done } = args;
+	done = !!done
   todos.push({
     timestamp,
     title,
-    done: false,
+    done,
   });
   return todos;
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean; babel ./es6/*.* -d ./build; babel ./es6/**/* -d ./build; mv build/es6/* build/; rmdir build/es6",
-    "start": "node ./build/server.js",
+    "start": "npm run build && node ./build/server.js",
     "dev": "nodemon ./es6/server.js --exec babel-node --presets es2015 ",
     "clean": "rm -rf ./build/",
     "fix-lint": "eslint --fix es6"
