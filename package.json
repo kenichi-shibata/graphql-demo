@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean; babel ./src/*.* -d ./build; babel ./src/**/* -d ./build; mv build/src/* build/; rmdir build/src",
-    "start": "npm run build && node ./build/server.js",
+    "build:prod": "webpack --config webpack.prod.js",
+    "build": "webpack",
+    "start": "node ./build/server.js",
     "dev": "nodemon ./src/server.js --exec babel-node --presets es2015 ",
     "clean": "rm -rf ./build/",
     "fix-lint": "eslint --fix src"
@@ -35,6 +36,7 @@
     "eslint-plugin-import": "1.16.0",
     "eslint-plugin-jsx-a11y": "2.2.2",
     "eslint-plugin-react": "6.3.0",
-    "nodemon": "^1.11.0"
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.12"
   }
 }

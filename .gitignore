@@ -3,3 +3,4 @@ build
 *.idea
 *.txt
 npm-debug.log
+dist
