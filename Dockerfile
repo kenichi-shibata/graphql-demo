@@ -1,7 +1,9 @@
 FROM node:8-alpine
 
+USER node 
+
 WORKDIR /opt/app
-COPY . /opt/app
+COPY --chown=node:node . /opt/app
 RUN apk add --no-cache --virtual gyp \
   python \
   make \
