@@ -8,10 +8,8 @@
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "build": "npm run build:prod",
-    "start": "node ./build/server.js",
-    "dev": "webpack-dev-server --mode development --open",
-    "clean": "rm -rf ./build/",
-    "fix-lint": "eslint --fix src"
+    "start": "npm run build &&node ./dist/bundle.js",
+    "dev": "webpack-dev-server --mode development --open"
   },
   "author": "Kenichi Shibata <kenichi.shibata@fastretailing.com> (kenichishibata31.github.io)",
   "license": "ISC",
