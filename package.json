@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "build": "npm run build:prod",
     "start": "node ./build/server.js",
@@ -22,11 +23,12 @@
     "express": "4.16.3",
     "express-graphql": "0.5.3",
     "graphql": "0.6.0",
-    "html-webpack-plugin": "3.0.6"
+    "html-webpack-plugin": "3.0.7"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
+    "babel-preset-env": "1.6.1",
     "html-loader": "0.5.5",
     "webpack": "4.1.1",
     "webpack-cli": "2.0.12",

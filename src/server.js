@@ -7,7 +7,7 @@ import todo from './todo';
 
 const path = '/playground';
 const app = express();
-const PORT = process.env.PORT || 8481;
+const PORT = process.env.PORT || 8080;
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
